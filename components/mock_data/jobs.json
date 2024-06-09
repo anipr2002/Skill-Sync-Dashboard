@@ -1,0 +1,27 @@
+[
+    {
+      "jobID": "1",
+      "companyName": "Bosch",
+      "location": "Schweinfurt",
+      "positionName":"Praktikant*in im Projektmanagement und Business Development (w/m/div.)",
+      "tags": ["Sales", "Marketing"],
+      "href": "https://www.bosch.de/"
+        },
+    {
+      "jobID": "2",
+      "companyName": "Shaeffler",
+      "location": "Schweinfurt",
+      "positionName": "Praktikant*in im Projektmanagement und Business Development (w/m/div.)",
+      "tags": ["Software Engineering"],
+      "href": "https://www.schaeffler.de/"
+    },
+    {
+      "jobID": "3",
+      "companyName": "Bosch1",
+      "location": "Schweinfurt",
+      "positionName":
+        "Praktikant*in im Projektmanagement und Business Development (w/m/div.)",
+      "tags": [],
+      "href": "https://www.bosch.de/"
+    }
+  ]

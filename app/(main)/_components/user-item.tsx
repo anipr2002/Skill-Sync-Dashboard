@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export const UserItem = () => {
+export const UserItem = ({ showAvatar = false }: { showAvatar?: boolean }) => {
   const { user } = useUser();
 
   return (
@@ -21,17 +21,29 @@ export const UserItem = () => {
       <DropdownMenuTrigger asChild>
         <div
           role="button"
-          className="flex items-center text-sm p-3 w-full hover:bg-primary/5"
+          className="flex items-center justify-center text-sm p-3 w-full hover:bg-primary/5"
         >
-          <div className="gap-x-2 flex items-center max-w-[150px]">
-            <Avatar className="h-5 w-5">
-              <AvatarImage src={user?.imageUrl} />
-            </Avatar>
-            <span className="text-start font-medium line-clamp-1">
-              {user?.fullName}&apos;
-            </span>
+          <div className="gap-x-2 flex items-center justify-center max-w-[150px]">
+            {showAvatar && (
+              <Avatar className="h-10 w-10">
+                <AvatarImage src={user?.imageUrl} />
+              </Avatar>
+            )}
+            {!showAvatar && (
+              <>
+                <Avatar className="h-5 w-5">
+                  <AvatarImage src={user?.imageUrl} />
+                </Avatar>
+
+                <span className="text-start font-medium line-clamp-1">
+                  {user?.fullName}&apos;
+                </span>
+              </>
+            )}
           </div>
-          <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground h-4 w-4" />
+          {!showAvatar && (
+            <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground h-4 w-4" />
+          )}
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent
