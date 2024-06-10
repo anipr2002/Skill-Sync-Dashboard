@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import _ from "lodash";
 import { useListingStore, IListing } from "@/store/listing";
-import JobsList from "@/components/mock_data/jobs.json";
 
 const Jobs = () => {
   const { activeSkillTag } = useListingStore();
@@ -12,14 +11,6 @@ const Jobs = () => {
   // const jobList: IListing[] = JobsList as IListing[];
 
   const [jobList, setJobList] = useState<IListing[]>([]);
-
-  // useEffect(() => {
-  //   fetch("/api/skf")
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       setJobList(data);
-  //     });
-  // }, []);
 
   //setJoblist from two api points. /api/skf and /api/zf
 

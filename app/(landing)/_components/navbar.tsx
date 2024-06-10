@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div
       className={cn(
-        "z-50 bg-background dark:bg-[#1f1f1f] fixed flex items-center w-full p-6",
+        "z-50 bg-transparent dark:bg-[#1f1f1f] fixed flex items-center w-full p-6",
         scrolled &&
           "border-b border-zinc-900/20 transition ease-in duration-300 shadow-sm"
       )}
@@ -35,7 +35,7 @@ const Navbar = () => {
         {!isAuthenticated && !isLoading && (
           <>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
+              <Button variant="default" size="sm">
                 Log in
               </Button>
             </SignInButton>
@@ -46,7 +46,7 @@ const Navbar = () => {
         )}
         {isAuthenticated && !isLoading && (
           <>
-            <Button variant="ghost" size="sm">
+            <Button variant="sidebar" size="sm">
               <Link href="/dashboard">Enter Dashboard</Link>
             </Button>
             <UserButton afterSignOutUrl="/" />

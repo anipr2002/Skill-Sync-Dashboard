@@ -4,6 +4,8 @@ import { JSDOM } from "jsdom";
 import ShortUniqueId from 'short-unique-id';
 import { SkillTag } from "@/store/listing";
 
+import stopword, { removeStopwords, eng } from 'stopword'
+
 
 export async function GET() {
   const { randomUUID } = new ShortUniqueId();
@@ -35,11 +37,18 @@ export async function GET() {
     const jobsUrl = row.querySelector(".jobTitle-link")?.getAttribute("href");
     const href = `https://jobs.zf.com${jobsUrl}`;
 
+    // split tags into array of tags " " and ","
+    const tagsArray = tags.split(/[\s,]+/)
+    const stopwords = ["and", "&", "und",","]
+    const skillTags = removeStopwords(tagsArray,[...eng, ...stopwords])
+    
+    console.log(tags)
+
     const jobDetailsObject = {      
       jobID,
       positionName,
       companyName,
-      tags : tags.split(",") as [],
+      tags : skillTags,
       location,
       href,
       iconSrc,

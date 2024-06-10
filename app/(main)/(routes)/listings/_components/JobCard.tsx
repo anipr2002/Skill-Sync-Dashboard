@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SkillTag } from "@/store/listing";
+import LinearGradient from "@/components/magicui/linear-gradient";
 type JobCardProps = {
   positionName: string;
   companyName: string;
@@ -73,6 +74,7 @@ const JobCard = ({
           </div>
         </div>
         <CardContent className="border-t px-4 py-6">
+          {/* <LinearGradient /> */}
           <h4 className="text-xl font-bold">{positionName}</h4>
         </CardContent>
       </Card>

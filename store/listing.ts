@@ -10,7 +10,7 @@ export interface IListing {
     href : string;
 }
 
-export type SkillTag = "Software Engineering" | "Data Science" | "Product Management" | "Sales" | "Marketing" | "Design" | "Finance" | "Human Resources" | "Operations" | "Customer Support" | "Legal" | "Human Resources"| "Other"
+export type SkillTag = "Software Engineering" |"Technology"|  "Data Science" | "Product Management" | "Sales" | "Marketing" | "Design" | "Finance" | "Human Resources" | "Operations" | "Customer Support" | "Legal" | "Human Resources"| "Other"
 
 interface IListingStore {
     activeSkillTag : SkillTag[];

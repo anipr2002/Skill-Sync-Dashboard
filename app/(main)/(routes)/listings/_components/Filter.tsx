@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 const Filter = () => {
   const filters: SkillTag[] = [
     "Software Engineering",
+    "Technology",
     "Product Management",
     "Data Science",
     "Design",
