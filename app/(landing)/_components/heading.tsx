@@ -9,7 +9,11 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Pricing from "./pricing";
+import Marquee from "react-fast-marquee";
+import { FlipWords } from "@/components/ui/flip-words";
+
 const Heading = () => {
+  const words = ["recruitment", "placements", "networking"];
   const { isAuthenticated, isLoading } = useConvexAuth();
   return (
     <BgNoiseWrapper url="/cult-noise.png">
@@ -30,7 +34,7 @@ const Heading = () => {
         )}
         {isAuthenticated && !isLoading && (
           <Button>
-            <Link href="/dashboard">Enter Notion</Link>
+            <Link href="/dashboard">Enter Dashboard</Link>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         )}
@@ -44,7 +48,14 @@ const Heading = () => {
         )}
 
         <div className="w-full bg-white border-4 border-black shadow-[8px_8px_0px_rgba(0,0,0,1)] grid place-content-center mt-20">
-          <div>
+          <div className="relative w-fit overflow-hidden">
+            <div className="w-[30%] rotate-[-35deg] translte-y-[1rem] absolute top-14 left-[-5%] overflow-hidden z-[1] bg-blue-600 hidden sm:block">
+              <Marquee autoFill={true}>
+                <span className="px-3 font-albert text-[16px] text-white">
+                  COMING SOON 🎉
+                </span>
+              </Marquee>
+            </div>
             <Image src="/image.png" width={1920} height={1080} alt="image" />
           </div>
         </div>

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import JobCard from "./JobCard";
 import _ from "lodash";
 import { useListingStore, IListing } from "@/store/listing";
+import JobCard2 from "./JobCard2";
 
 const Jobs = () => {
   const { activeSkillTag } = useListingStore();

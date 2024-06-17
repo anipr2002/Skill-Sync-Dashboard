@@ -38,7 +38,7 @@ const PricingHeader = ({
   subtitle: string;
 }) => (
   <section className="text-center">
-    <h2 className="text-3xl font-bold">{title}</h2>
+    <h2 className="text-5xl font-bold">{title}</h2>
     <p className="text-xl pt-1">{subtitle}</p>
     <br />
   </section>
@@ -70,7 +70,7 @@ const PricingCard = ({
 }: PricingCardProps) => (
   <Card
     className={cn(
-      `w-72 flex flex-col justify-between py-1 ${popular ? "border-rose-400" : "border-zinc-700"} mx-auto sm:mx-0`,
+      `w-72 flex flex-col justify-between py-1 ${popular ? "border-rose-400 bg-rose-400/20 scale-110" : "border-zinc-700"} mx-auto sm:mx-0`,
       {
         "animate-background-shine bg-white dark:bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] transition-colors":
           exclusive,
